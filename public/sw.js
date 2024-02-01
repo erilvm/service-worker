@@ -1,16 +1,28 @@
-//Responder con lo que contiene la solicitud
 
-self.addEventListener(fetch, event  => {
-   event.respond(selft.fetch(event.request)
-   )
-   console.log(event.request);
-   })
+//ciclo de vida del sw
+//1-Instalacion
 
-   //interceptar la solicitud
-
-   self.addEventListener('fetch', event => {
-       if(event.request.url.includes ('boston1')){
-           event.respondWith(fetch('logo512.png'))
-  
-   }
-   })
+self.addEventListener('install', event => {
+    console.log('Sw: instalado')
+    //Simular instalacion de caches
+    const instalacion = new Promise((resolve, reject) => {
+       setTimeout(() => {
+          console.log('SW: Instalacion terminada')
+          
+       self.skipWaiting()
+       resolve()
+       })
+       
+    })
+ })
+ 
+ //2-Activado 
+ self.addEventListener('activate', event => {
+    console.log('Sw: Activado y controlando la app')
+ })
+ 
+ //Fech
+ self.addEventListener('activate', event => {
+    console.log('Sw: Activado y controlando la app')
+ })
+ 
