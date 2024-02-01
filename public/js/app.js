@@ -11,4 +11,4 @@ if(navigator.serviceWorker) {
   //.catch(err =>console.log('Servoice worker register: Error: ${'))
 }
 
-fetch('https/productos')
+fetch('https://fakestoreapi.com/products/1')
