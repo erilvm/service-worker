@@ -1,16 +1,10 @@
-//Responder con lo que contiene la solicitud
 
-self.addEventListener(fetch, event  => {
-   event.respond(selft.fetch(event.request)
-   )
-   console.log(event.request);
-   })
+self.addEventListener('fetch',fuction (event) {
+    console.log('SW:', event.request.url);
+    //aplicar estrategia del cache
+    if (event.request.url.includes('https://fakestoreapi.com/products/1')) {
+        const resp = new Response(`{"OK": false, "mensaje:" "Interceptado por el SW"}`);
+        event.respodWith(resp)
 
-   //interceptar la solicitud
-
-   self.addEventListener('fetch', event => {
-       if(event.request.url.includes ('boston1')){
-           event.respondWith(fetch('logo512.png'))
-  
-   }
-   })
+    }
+});
