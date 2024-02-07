@@ -26,3 +26,19 @@ self.addEventListener('install', event => {
     console.log('Sw: Activado y controlando la app')
  })
  
+ 
+ self.addEventListener('fetch',function (event) {
+   //console.log('SW: fetch', event.request.url);
+
+//if(event.request.url.includes('https://fakestoreapi.com/products/') ){
+   //const resp = new Response('{"ok": false, "mensaje": "interceptado por el sw"}');
+   //event.respondWith(resp);
+//}
+});
+
+//Sync:recuperamos la conexion de internet
+self.addEventListener('sync', event => {
+   console.log('Tenemos cnexion');
+   console.log(event);
+   console.log(event.tag);
+})
