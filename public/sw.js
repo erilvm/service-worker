@@ -37,8 +37,14 @@ self.addEventListener('install', event => {
 });
 
 //Sync:recuperamos la conexion de internet
-self.addEventListener('sync', event => {
-   console.log('Tenemos cnexion');
-   console.log(event);
-   console.log(event.tag);
-})
+//self.addEventListener('sync', event => {
+   //console.log('Tenemos cnexion');
+   //console.log(event);
+//console.log(event.tag);
+//})
+
+// Push
+self.addEventListener('push', event => {
+   console.log('Notificacion recibida ');
+});
+
